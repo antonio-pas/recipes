@@ -419,7 +419,7 @@
       fillRule: "evenodd",
       d: "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z",
       clipRule: "evenodd"
-    })))), !loading && /* @__PURE__ */ v("div", {
+    })))), !loading && data.meals != null && /* @__PURE__ */ v("div", {
       class: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
     }, data.meals.map((el) => {
       return /* @__PURE__ */ v("div", {
@@ -441,7 +441,9 @@
       })), /* @__PURE__ */ v("p", {
         class: "text-center whitespace-pre-line"
       }, el.strInstructions));
-    })), loading && /* @__PURE__ */ v("h1", {
+    })), !loading && data.meals == null && /* @__PURE__ */ v("h1", {
+      class: "text-3xl"
+    }, "Sorry, no results were found."), loading && /* @__PURE__ */ v("h1", {
       class: "text-3xl"
     }, "Loading..."));
   };

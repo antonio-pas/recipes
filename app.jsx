@@ -60,7 +60,7 @@ const App = () => {
           </svg>
         </button>
       </form>
-      {!loading && (
+      {!loading && data.meals != null && (
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.meals.map((el) => {
             return (
@@ -86,6 +86,7 @@ const App = () => {
           })}
         </div>
       )}
+      {!loading && data.meals == null && <h1 class="text-3xl">Sorry, no results were found.</h1>}
       {loading && <h1 class="text-3xl">Loading...</h1>}
     </div>
   );
